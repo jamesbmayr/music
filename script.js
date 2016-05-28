@@ -14,7 +14,7 @@ $(document).ready(function() {
 				["Cerulean Underground","ceruleanunderground.m4a"],
 				["SoW British March","sowbritishmarch.m4a"],
 				["SoW Russian March","sowrussianmarch.m4a"],
-				["Into the Void 2","intothevoid2.m4a"],
+				["Into the Void 2","intothevoid2.mp3"],
 				["Stride Piano","stridepiano.m4a"],
 				["A Drop of Death","adropofdeath.m4a"],
 				["Sitting at a Stone Table","sittingatastonetable.m4a"],
@@ -111,7 +111,7 @@ $(document).ready(function() {
 				["Into the Void","intothevoid.m4a"],
 			]],
 			["draftsadrift2","draftsadrift2.png","Drafts Adrift 2",[
-				["Sounddrawn","sounddrawn.m4a"],
+				["Sounddrawn","sounddrawn.mp3"],
 				["Abraham Lincoln","abrahamlincoln.m4a"],
 				["Puzzlement","puzzlement.m4a"],
 				["Snake-a-pede","snakeapede.m4a"],
