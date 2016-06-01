@@ -75,22 +75,22 @@ $(document).ready(function() {
 				["Earth","earth.m4a"],
 			]],
 			["draftsadrift","draftsadrift.png","Drafts Adrift",[
-				["Souls of War Theme","soulsofwartheme.m4a"],
-				["MegaStar RaceWay","megastarraceway.m4a"],
-				["Harmony Hums","harmonyhums.m4a"],
-				["Pretense","pretense.m4a"],
-				["Quickstep Crash","quickstepcrash.m4a"],
-				["In the Middle of the Month of March","inthemiddleofthemonthofmarch.m4a"],
-				["Tumbleweed Standoff","tumbleweedstandoff.m4a"],
-				["Fanfare Variations","fanfarevariations.m4a"],
-				["Darkness Dungeon","darknessdungeon.m4a"],
-				["Seafarer's Ballad","seafarersballad.m4a"],
-				["Island Jazz","islandjazz.m4a"],
-				["Contemplation","contemplation.m4a"],
-				["Meteor Wasteland","meteorwasteland.m4a"],
-				["Keep Calm and Carry On","keepcalmandcarryon.m4a"],
-				["Robot Waltz","robotwaltz.m4a"],
-				["Clarinet Corral","clarinetcorral.m4a"],
+				["Souls of War Theme","soulsofwartheme.mp3"],
+				["MegaStar RaceWay","megastarraceway.mp3"],
+				["Harmony Hums","harmonyhums.mp3"],
+				["Pretense","pretense.mp3"],
+				["Quickstep Crash","quickstepcrash.mp3"],
+				["In the Middle of the Month of March","inthemiddleofthemonthofmarch.mp3"],
+				["Tumbleweed Standoff","tumbleweedstandoff.mp3"],
+				["Fanfare Variations","fanfarevariations.mp3"],
+				["Darkness Dungeon","darknessdungeon.mp3"],
+				["Seafarer's Ballad","seafarersballad.mp3"],
+				["Island Jazz","islandjazz.mp3"],
+				["Contemplation","contemplation.mp3"],
+				["Meteor Wasteland","meteorwasteland.mp3"],
+				["Keep Calm and Carry On","keepcalmandcarryon.mp3"],
+				["Robot Waltz","robotwaltz.mp3"],
+				["Clarinet Corral","clarinetcorral.mp3"],
 			]],
 			["cascade","cascade.png","Cascade",[
 				["Uplift","uplift.mp3"],
@@ -248,6 +248,28 @@ $(document).ready(function() {
 			}
 		}
 
+	//---getNext---//
+		function getNext(music,currentSong) {
+			console.log("finished " + currentSong);
+
+			for (var i = 0; i < music.length; i++) {
+				for (var j = 0; j < music[i][3].length; j++) {
+					if (music[i][3][j][1] === currentSong) {
+						if (music[i][3].length > (j + 1)) {
+							console.log("next song");
+							var nextSong = music[i][3][j + 1][1];
+						}
+						else {
+							console.log("restarting album");
+							var nextSong = music[i][3][0][1];
+						}
+					}
+				}
+			}
+
+			return nextSong;
+		}
+
 	//---actions---//
 		showAlbums(music);
 
@@ -260,7 +282,8 @@ $(document).ready(function() {
 		});
 
 		audio.addEventListener("ended", function(){
-			console.log("test");
+			currentSong = String($("source").attr("src")).substring(6);
+			switchSongs(music,getNext(music,currentSong));
 		});
 
 });
