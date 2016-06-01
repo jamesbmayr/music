@@ -281,7 +281,7 @@ $(document).ready(function() {
 			switchSongs(music,this.id);
 		});
 
-		audio.addEventListener("ended", function(){
+		audio.addEventListener("ended", function() {
 			currentSong = String($("source").attr("src")).substring(6);
 			switchSongs(music,getNext(music,currentSong));
 		});
