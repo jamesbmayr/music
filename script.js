@@ -240,6 +240,8 @@ $(document).ready(function() {
 					if (music[i][3][j][1] === clickedSong) {
 						$("#nowPlayingSong").empty().append(music[i][3][j][0]);
 						$("#nowPlayingAlbum").empty().append(music[i][2]);
+						$("title").text("jamesmayr: " + music[i][3][j][0]);
+						$("#logo").attr("href","artwork/" + music[i][1]);
 
 						var player = $("#nowPlaying").attr("src","music/" + clickedSong);
 						$("audio").trigger("pause").load().trigger("play");
