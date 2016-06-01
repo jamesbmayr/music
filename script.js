@@ -129,22 +129,22 @@ $(document).ready(function() {
 				["Together Again","togetheragain.m4a"],
 			]],
 			["captainchronosailsthroughtime","captainchronosailsthroughtime.png","Captain Chrono Sails Through Time",[
-				["Home","home.m4a"],
-				["Apocalypse","apocalypse.m4a"],
-				["Solemnes","solemnes.m4a"],
-				["Mobster Maze","mobstermaze.m4a"],
-				["Conquistadores","conquistadores.m4a"],
-				["Ragtime Locomotive","ragtimelocomotive.m4a"],
-				["Drums","drums.m4a"],
-				["Gamelan Jazz","gamelanjazz.m4a"],
-				["Celtic Castle","celticcastle.m4a"],
-				["Old West in the Middle East","oldwestinthemiddleeast.m4a"],
-				["Isla del Sol","isladelsol.m4a"],
-				["Shamisen Shimmer","shamisenshimmer.m4a"],
-				["Synthphony","synthphony.m4a"],
-				["Life on Mars","lifeonmars.m4a"],
-				["Frontlines","frontlines.m4a"],
-				["Alexander","alexander.m4a"],
+				["Home","home.mp3"],
+				["Apocalypse","apocalypse.mp3"],
+				["Solemnes","solemnes.mp3"],
+				["Mobster Maze","mobstermaze.mp3"],
+				["Conquistadores","conquistadores.mp3"],
+				["Ragtime Locomotive","ragtimelocomotive.mp3"],
+				["Drums","drums.mp3"],
+				["Gamelan Jazz","gamelanjazz.mp3"],
+				["Celtic Castle","celticcastle.mp3"],
+				["Old West in the Middle East","oldwestinthemiddleeast.mp3"],
+				["Isla del Sol","isladelsol.mp3"],
+				["Shamisen Shimmer","shamisenshimmer.mp3"],
+				["Synthphony","synthphony.mp3"],
+				["Life on Mars","lifeonmars.mp3"],
+				["Frontlines","frontlines.mp3"],
+				["Alexander","alexander.mp3"],
 			]],
 			["penduluminous","penduluminous.png","Penduluminous",[
 				["After All","afterall.mp3"],
@@ -250,7 +250,6 @@ $(document).ready(function() {
 
 	//---actions---//
 		showAlbums(music);
-		$("audio").load().trigger("play");
 
 		$(document).on("click",".album",function() {
 			showTracks(music,this.id);
