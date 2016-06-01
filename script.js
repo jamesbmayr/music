@@ -93,22 +93,22 @@ $(document).ready(function() {
 				["Clarinet Corral","clarinetcorral.m4a"],
 			]],
 			["cascade","cascade.png","Cascade",[
-				["Uplift","uplift.m4a"],
-				["Freefall","freefall.m4a"],
-				["Plummet","plummet.m4a"],
-				["Marvel at the Sky","marvelatthesky.m4a"],
-				["Yesteryear's July","yesteryearsjuly.m4a"],
-				["I'll Be Fine","illbefine.m4a"],
-				["Consort Concerto for Woodwinds","consortconcertoforwoodwinds.m4a"],
-				["Gleam","gleam.m4a"],
-				["Solstice Song","solsticesong.m4a"],
-				["Mistaken Faces","mistakenfaces.m4a"],
-				["Quest","quest.m4a"],
-				["Brass Blaster","brassblaster.m4a"],
-				["Modernity","modernity.m4a"],
-				["Ice","ice.m4a"],
-				["Chameleon","chameleon.m4a"],
-				["Into the Void","intothevoid.m4a"],
+				["Uplift","uplift.mp3"],
+				["Freefall","freefall.mp3"],
+				["Plummet","plummet.mp3"],
+				["Marvel at the Sky","marvelatthesky.mp3"],
+				["Yesteryear's July","yesteryearsjuly.mp3"],
+				["I'll Be Fine","illbefine.mp3"],
+				["Consort Concerto for Winds","consortconcertoforwinds.mp3"],
+				["Gleam","gleam.mp3"],
+				["Solstice Song","solsticesong.mp3"],
+				["Mistaken Faces","mistakenfaces.mp3"],
+				["Quest","quest.mp3"],
+				["Brass Blaster","brassblaster.mp3"],
+				["Modernity","modernity.mp3"],
+				["Ice","ice.mp3"],
+				["Chameleon","chameleon.mp3"],
+				["Into the Void","intothevoid.mp3"],
 			]],
 			["draftsadrift2","draftsadrift2.png","Drafts Adrift 2",[
 				["Sounddrawn","sounddrawn.mp3"],
@@ -257,6 +257,10 @@ $(document).ready(function() {
 
 		$(document).on("click",".trackname",function() {
 			switchSongs(music,this.id);
+		});
+
+		audio.addEventListener("ended", function(){
+			console.log("test");
 		});
 
 });
