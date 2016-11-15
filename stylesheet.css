@@ -28,7 +28,7 @@
 
 /* nowPlaying */
 	#nowPlayingBox {
-		width: calc(100vw / 3);
+		width: calc(100% / 3);
 		height: calc(100vw / 3);
 		background-repeat: no-repeat;
 		background-size: 100% 100%;
@@ -65,7 +65,7 @@
 
 /* albums */
 	.album {
-		width: calc(100vw / 3);
+		width: calc(100% / 3);
 		height: calc(100vw / 3);
 		background-repeat: no-repeat;
 		background-size: 100% 100%;
