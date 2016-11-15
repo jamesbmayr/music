@@ -8,7 +8,6 @@ $(document).ready(function() {
 				["Riff","riff.mp3"],
 				["Parade","parade.mp3"],
 				["Just in Time","justintime.mp3"],
-				["Consort Concerto for Piano","consortconcertoforpiano.mp3"],
 				["Spider Jazz","spiderjazz.mp3"],
 				["Baroquen Dreams","baroquendreams.mp3"],
 				["Cerulean Underground","ceruleanunderground.mp3"],
@@ -19,6 +18,7 @@ $(document).ready(function() {
 				["A Drop of Death","adropofdeath.mp3"],
 				["Sitting at a Stone Table","sittingatastonetable.mp3"],
 				["Breaking Open the Box","breakingopenthebox.mp3"],
+				["Mischief","mischief.mp3"],
 			]],
 			["eternalhorizon","eternalhorizon.png","Eternal Horizon",[
 				["Eternal Horizon","eternalhorizon.mp3"],
