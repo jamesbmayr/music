@@ -154,7 +154,7 @@ $(document).ready(function() {
 				["Flash (Hurry Up and Wait)","flashhurryupandwait.mp3"],
 				["You Told Me That You Loved Me Too Soon","youtoldmethatyoulovedmetoosoon.mp3"],
 				["Treasure","treasure.mp3"],
-				["Moonlight","moonlinght.mp3"],
+				["Moonlight","moonlight.mp3"],
 				["Wheels Turning","wheelsturning.mp3"],
 				["Sorry I'm So Late","sorryimsolate.mp3"],
 				["Tell Me","tellme.mp3"],
