@@ -1,291 +1,333 @@
-$(document).ready(function() {
+window.onload = function() {
 
-	//---music---//
-		var music = [
-			["forwhateverreason","forwhateverreason.png","For Whatever Reason",[
-				["Octive March","octivemarch.mp3"],
-				["Daydream Come True 2","daydreamcometrue2.mp3"],
-				["Riff","riff.mp3"],
-				["Parade","parade.mp3"],
-				["Just in Time","justintime.mp3"],
-				["Spider Jazz","spiderjazz.mp3"],
-				["Baroquen Dreams","baroquendreams.mp3"],
-				["Cerulean Underground","ceruleanunderground.mp3"],
-				["SoW British March","sowbritishmarch.mp3"],
-				["SoW Russian March","sowrussianmarch.mp3"],
-				["Into the Void 2","intothevoid2.mp3"],
-				["Stride Piano","stridepiano.mp3"],
-				["A Drop of Death","adropofdeath.mp3"],
-				["Sitting at a Stone Table","sittingatastonetable.mp3"],
-				["Breaking Open the Box","breakingopenthebox.mp3"],
-				["Mischief","mischief.mp3"],
-			]],
-			["eternalhorizon","eternalhorizon.png","Eternal Horizon",[
-				["Eternal Horizon","eternalhorizon.mp3"],
-				["Midnight Retreat","midnightretreat.mp3"],
-				["Golden Hope","goldenhope.mp3"],
-				["Epic of Koranames","epicofkoranames.mp3"],
-				["Windwater","windwater.mp3"],
-				["Clifftop Clash","clifftopclash.mp3"],
-				["Paradaze","paradaze.mp3"],
-				["Summer's End","summersend.mp3"],
-				["Pachelbel's Catapult","pachelbelscatapult.mp3"],
-				["March of the Pine Trees","marchofthepinetrees.mp3"],
-				["Frost Rain","frostrain.mp3"],
-				["Another Epic Journey","anotherepicjourney.mp3"],
-				["Seafoam and Sunsets","seafoamandsunsets.mp3"],
-				["Falling Flowers","fallingflowers.mp3"],
-				["Dreamcatcher","dreamcatcher.mp3"],
-				["Morning Dew","morningdew.mp3"],
-			]],
-			["skyburst","skyburst.png","Skyburst",[
-				["Sunlight Silhouette","sunlightsilhouette.mp3"],
-				["Evergray","evergray.mp3"],
-				["Hot Air Balloons","hotairballoons.mp3"],
-				["Tales of a Nothing Little Town","talesofanothinglittletown.mp3"],
-				["November March","novemebermarch.mp3"],
-				["December March","decembermarch.mp3"],
-				["Tales of the Broken City","talesofthebrokencity.mp3"],
-				["Victorious Valediction","victoriousvalediction.mp3"],
-				["Time","time.mp3"],
-				["Bells and Whistles","bellsandwhistles.mp3"],
-				["Fireplace","fireplace.mp3"],
-				["Terza Rima","terzarima.mp3"],
-				["Firestorm Sea","firestormsea.mp3"],
-				["Clear Blue","clearblue.mp3"],
-				["Rebirth","rebirth.mp3"],
-				["Skyburst","skyburst.mp3"],
-			]],
-			["shadowvalley","shadowvalley.png","Shadow Valley",[
-				["Stride","stride.mp3"],
-				["Beforestory","beforestory.mp3"],
-				["January March","januarymarch.mp3"],
-				["The Wall","thewall.mp3"],
-				["Gray Destiny","graydestiny.mp3"],
-				["Snowshade","snowshade.mp3"],
-				["Spirit of Adventure","spiritofadventure.mp3"],
-				["Far-Fading Lights","farfadinglights.mp3"],
-				["Shadow Valley","shadowvalley.mp3"],
-				["October Twilight","octobertwilight.mp3"],
-				["Lullabybye","lullabybye.mp3"],
-				["Jungle Noon","junglenoon.mp3"],
-				["Finding Your Place","findingyourplace.mp3"],
-				["Air","air.mp3"],
-				["Fire","fire.mp3"],
-				["Earth","earth.mp3"],
-			]],
-			["draftsadrift","draftsadrift.png","Drafts Adrift",[
-				["Souls of War Theme","soulsofwartheme.mp3"],
-				["MegaStar RaceWay","megastarraceway.mp3"],
-				["Harmony Hums","harmonyhums.mp3"],
-				["Pretense","pretense.mp3"],
-				["Quickstep Crash","quickstepcrash.mp3"],
-				["In the Middle of the Month of March","inthemiddleofthemonthofmarch.mp3"],
-				["Tumbleweed Standoff","tumbleweedstandoff.mp3"],
-				["Fanfare Variations","fanfarevariations.mp3"],
-				["Darkness Dungeon","darknessdungeon.mp3"],
-				["Seafarer's Ballad","seafarersballad.mp3"],
-				["Island Jazz","islandjazz.mp3"],
-				["Contemplation","contemplation.mp3"],
-				["Meteor Wasteland","meteorwasteland.mp3"],
-				["Keep Calm and Carry On","keepcalmandcarryon.mp3"],
-				["Robot Waltz","robotwaltz.mp3"],
-				["Clarinet Corral","clarinetcorral.mp3"],
-			]],
-			["cascade","cascade.png","Cascade",[
-				["Uplift","uplift.mp3"],
-				["Freefall","freefall.mp3"],
-				["Plummet","plummet.mp3"],
-				["Marvel at the Sky","marvelatthesky.mp3"],
-				["Yesteryear's July","yesteryearsjuly.mp3"],
-				["I'll Be Fine","illbefine.mp3"],
-				["Consort Concerto for Winds","consortconcertoforwinds.mp3"],
-				["Gleam","gleam.mp3"],
-				["Solstice Song","solsticesong.mp3"],
-				["Mistaken Faces","mistakenfaces.mp3"],
-				["Quest","quest.mp3"],
-				["Brass Blaster","brassblaster.mp3"],
-				["Modernity","modernity.mp3"],
-				["Ice","ice.mp3"],
-				["Chameleon","chameleon.mp3"],
-				["Into the Void","intothevoid.mp3"],
-			]],
-			["draftsadrift2","draftsadrift2.png","Drafts Adrift 2",[
-				["Sounddrawn","sounddrawn.mp3"],
-				["Abraham Lincoln","abrahamlincoln.mp3"],
-				["Puzzlement","puzzlement.mp3"],
-				["Snake-a-pede","snakeapede.mp3"],
-				["Pizzicato Pulse","pizzicatopulse.mp3"],
-				["SoW French Theme","sowfrenchtheme.mp3"],
-				["SoW Transitions","sowtransitions.mp3"],
-				["SoW German Theme","sowgermantheme.mp3"],
-				["SoW American March","sowamericanmarch.mp3"],
-				["Wavering Black","waveringblack.mp3"],
-				["Rainscape","rainscape.mp3"],
-				["Don't Touch Me; I Hate You","donttouchmeihateyou.mp3"],
-				["Road Crosser","roadcrosser.mp3"],
-				["Ski Slope Theme","skislopetheme.mp3"],
-				["Chromatones","chromatones.mp3"],
-				["Together Again","togetheragain.mp3"],
-			]],
-			["captainchronosailsthroughtime","captainchronosailsthroughtime.png","Captain Chrono Sails Through Time",[
-				["Home","home.mp3"],
-				["Apocalypse","apocalypse.mp3"],
-				["Solemnes","solemnes.mp3"],
-				["Mobster Maze","mobstermaze.mp3"],
-				["Conquistadores","conquistadores.mp3"],
-				["Ragtime Locomotive","ragtimelocomotive.mp3"],
-				["Drums","drums.mp3"],
-				["Gamelan Jazz","gamelanjazz.mp3"],
-				["Celtic Castle","celticcastle.mp3"],
-				["Old West in the Middle East","oldwestinthemiddleeast.mp3"],
-				["Isla del Sol","isladelsol.mp3"],
-				["Shamisen Shimmer","shamisenshimmer.mp3"],
-				["Synthphony","synthphony.mp3"],
-				["Life on Mars","lifeonmars.mp3"],
-				["Frontlines","frontlines.mp3"],
-				["Alexander","alexander.mp3"],
-			]],
-			["penduluminous","penduluminous.png","Penduluminous",[
-				["After All","afterall.mp3"],
-				["Would You Be My Muse?","wouldyoubemymuse.mp3"],
-				["Ghost in the Drum Machine","ghostinthedrummachine.mp3"],
-				["Where We Left Off","whereweleftoff.mp3"],
-				["Flash (Hurry Up and Wait)","flashhurryupandwait.mp3"],
-				["You Told Me That You Loved Me Too Soon","youtoldmethatyoulovedmetoosoon.mp3"],
-				["Treasure","treasure.mp3"],
-				["Moonlight","moonlinght.mp3"],
-				["Wheels Turning","wheelsturning.mp3"],
-				["Sorry I'm So Late","sorryimsolate.mp3"],
-				["Tell Me","tellme.mp3"],
-				["Rise","rise.mp3"],
-				["Swing, Pendulum, Swing","swingpendulumswing.mp3"],
-				["One Day","oneday.mp3"],
-				["Minus Money","minusmoney.mp3"],
-				["365","365.mp3"],
-			]],
-			["thedeathmakerssymphony","thedeathmakerssymphony.png","The Deathmakers' Symphony",[
-				["Adaptation","adaptation.mp3"],
-				["Shipwreck","shipwreck.mp3"],
-				["A Most Peculiar Child","amostpeculiarchild.mp3"],
-				["Becoming Friends","becomingfriends.mp3"],
-				["Jailbreak!","jailbreak.mp3"],
-				["The Dragon","thedragon.mp3"],
-				["Never Been Home Before","neverbeenhomebefore.mp3"],
-				["Maybe Something More","maybesomethingmore.mp3"],
-				["Construction","construction.mp3"],
-				["Bittersweet","bittersweet.mp3"],
-				["Sails on the Horizon","sailsonthehorizon.mp3"],
-				["Annihilation","annihilation.mp3"],
-				["The Lightning Isle","thelightningisle.mp3"],
-				["Lovelost","lovelost.mp3"],
-				["The Cure","thecure.mp3"],
-				["Forever","forever.mp3"],
-			]],
-			["singles","singles.png","Singles",[
-				["Goodbye","goodbye.m4a"],
-				["Motion","motion.m4a"],
-				["Engine","engine.m4a"],
-				["Concede","concede.m4a"],
-				["Interconnected","interconnected.m4a"],
-				["Sunshine","sunshine.m4a"],
-				["Expedition","expedition.m4a"],
-				["Window","window.m4a"],
-				["Villain","villain.m4a"],
-				["Ambition","ambition.m4a"],
-				["Exhaustion","exhaustion.m4a"],
-				["Facade","facade.m4a"],
-				["Train","train.m4a"],
-				["Weight","weight.m4a"],
-				["Doubt","doubt.m4a"],
-				["Hello","hello.m4a"],
-			]]
-		];
-
-	//---showAlbums---//
-		function showAlbums(music) {
-			$("#selection").append("<div id='nowPlayingBox' style='background-image: url(artwork/sounddrawn.png)'><div id='nowPlayingInfo'>now playing<div id='nowPlayingSong'>Sounddrawn</div><div id='nowPlayingAlbum'></div></div></div>");
-
-			music.reverse();
-			for (var i = 0; i < music.length; i++) {
-				$("#selection").append("<div id='" + music[i][0] + "' class='album' style='background-image: url(artwork/" + music[i][1] + ")'></div>");
+	/*** globals ***/
+		/* triggers */
+			if ((/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i).test(navigator.userAgent)) {
+				var on = { click: "touchstart", mousedown: "touchstart", mousemove: "touchmove", mouseup: "touchend" }
 			}
-		}
+			else {
+				var on = { click:      "click", mousedown:  "mousedown", mousemove: "mousemove", mouseup:  "mouseup" }
+			}
 
-	//---showTracks--//
-		function showTracks(music,clickedAlbum) {
-			console.log("displaying " + clickedAlbum);
+		/* elements */
+			var discography = document.getElementById("discography")
+			var player = document.getElementById("player")
+			var source = document.getElementById("source")
+			
+			var artwork = document.getElementById("artwork")
+			var nowPlayingTrack = document.getElementById("now-playing-track")
+			var nowPlayingAlbum = document.getElementById("now-playing-album")
 
-			for (var i = 0; i < music.length; i++) {
-				if (music[i][0] === clickedAlbum) {
-					$(".album").empty();
-					$("#" + clickedAlbum).append("<div id='listing'></div>");
-					
-					var listing = "";
-					for (var j = 0; j < music[i][3].length; j++) {
-						listing = listing + "<li id='" + music[i][3][j][1] + "' class='trackname'>" + music[i][3][j][0] + "</li>";
-					}
+			var logo = document.getElementById("logo")
+			var title = document.getElementById("title")
+			var currentSong = {
+				album: null,
+				index: null
+			}
 
-					$("#listing").append("<ol>" + listing + "</ol>");
+		/* music */
+			var music = {
+				forwhateverreason: {id: "forwhateverreason", image: "forwhateverreason.png", name: "For Whatever Reason", year: 2010, tracks: [
+					{name: "Octive March", audio: "octivemarch.mp3"},
+					{name: "Daydream Come True 2", audio: "daydreamcometrue2.mp3"},
+					{name: "Riff", audio: "riff.mp3"},
+					{name: "Parade", audio: "parade.mp3"},
+					{name: "Just in Time", audio: "justintime.mp3"},
+					{name: "Spider Jazz", audio: "spiderjazz.mp3"},
+					{name: "Baroquen Dreams", audio: "baroquendreams.mp3"},
+					{name: "Cerulean Underground", audio: "ceruleanunderground.mp3"},
+					{name: "SoW British March", audio: "sowbritishmarch.mp3"},
+					{name: "SoW Russian March", audio: "sowrussianmarch.mp3"},
+					{name: "Into the Void 2", audio: "intothevoid2.mp3"},
+					{name: "Stride Piano", audio: "stridepiano.mp3"},
+					{name: "A Drop of Death", audio: "adropofdeath.mp3"},
+					{name: "Sitting at a Stone Table", audio: "sittingatastonetable.mp3"},
+					{name: "Breaking Open the Box", audio: "breakingopenthebox.mp3"},
+					{name: "Mischief", audio: "mischief.mp3"}
+				]},
+				eternalhorizon: {id: "eternalhorizon", image: "eternalhorizon.png", name: "Eternal Horizon", year: 2007, tracks: [
+					{name: "Eternal Horizon", audio: "eternalhorizon.mp3"},
+					{name: "Midnight Retreat", audio: "midnightretreat.mp3"},
+					{name: "Golden Hope", audio: "goldenhope.mp3"},
+					{name: "Epic of Koranames", audio: "epicofkoranames.mp3"},
+					{name: "Windwater", audio: "windwater.mp3"},
+					{name: "Clifftop Clash", audio: "clifftopclash.mp3"},
+					{name: "Paradaze", audio: "paradaze.mp3"},
+					{name: "Summer's End", audio: "summersend.mp3"},
+					{name: "Pachelbel's Catapult", audio: "pachelbelscatapult.mp3"},
+					{name: "March of the Pine Trees", audio: "marchofthepinetrees.mp3"},
+					{name: "Frost Rain", audio: "frostrain.mp3"},
+					{name: "Another Epic Journey", audio: "anotherepicjourney.mp3"},
+					{name: "Seafoam and Sunsets", audio: "seafoamandsunsets.mp3"},
+					{name: "Falling Flowers", audio: "fallingflowers.mp3"},
+					{name: "Dreamcatcher", audio: "dreamcatcher.mp3"},
+					{name: "Morning Dew", audio: "morningdew.mp3"}
+				]},
+				skyburst: {id: "skyburst", image: "skyburst.png", name: "Skyburst", year: 2008, tracks: [
+					{name: "Sunlight Silhouette", audio: "sunlightsilhouette.mp3"},
+					{name: "Evergray", audio: "evergray.mp3"},
+					{name: "Hot Air Balloons", audio: "hotairballoons.mp3"},
+					{name: "Tales of a Nothing Little Town", audio: "talesofanothinglittletown.mp3"},
+					{name: "November March", audio: "novemebermarch.mp3"},
+					{name: "December March", audio: "decembermarch.mp3"},
+					{name: "Tales of the Broken City", audio: "talesofthebrokencity.mp3"},
+					{name: "Victorious Valediction", audio: "victoriousvalediction.mp3"},
+					{name: "Time", audio: "time.mp3"},
+					{name: "Bells and Whistles", audio: "bellsandwhistles.mp3"},
+					{name: "Fireplace", audio: "fireplace.mp3"},
+					{name: "Terza Rima", audio: "terzarima.mp3"},
+					{name: "Firestorm Sea", audio: "firestormsea.mp3"},
+					{name: "Clear Blue", audio: "clearblue.mp3"},
+					{name: "Rebirth", audio: "rebirth.mp3"},
+					{name: "Skyburst", audio: "skyburst.mp3"}
+				]},
+				shadowvalley: {id: "shadowvalley", image: "shadowvalley.png", name: "Shadow Valley", year: 2009, tracks: [
+					{name: "Stride", audio: "stride.mp3"},
+					{name: "Beforestory", audio: "beforestory.mp3"},
+					{name: "January March", audio: "januarymarch.mp3"},
+					{name: "The Wall", audio: "thewall.mp3"},
+					{name: "Gray Destiny", audio: "graydestiny.mp3"},
+					{name: "Snowshade", audio: "snowshade.mp3"},
+					{name: "Spirit of Adventure", audio: "spiritofadventure.mp3"},
+					{name: "Far-Fading Lights", audio: "farfadinglights.mp3"},
+					{name: "Shadow Valley", audio: "shadowvalley.mp3"},
+					{name: "October Twilight", audio: "octobertwilight.mp3"},
+					{name: "Lullabybye", audio: "lullabybye.mp3"},
+					{name: "Jungle Noon", audio: "junglenoon.mp3"},
+					{name: "Finding Your Place", audio: "findingyourplace.mp3"},
+					{name: "Air", audio: "air.mp3"},
+					{name: "Fire", audio: "fire.mp3"},
+					{name: "Earth", audio: "earth.mp3"}
+				]},
+				draftsadrift: {id: "draftsadrift", image: "draftsadrift.png", name: "Drafts Adrift", year: 2010, tracks: [
+					{name: "Souls of War Theme", audio: "soulsofwartheme.mp3"},
+					{name: "MegaStar RaceWay", audio: "megastarraceway.mp3"},
+					{name: "Harmony Hums", audio: "harmonyhums.mp3"},
+					{name: "Pretense", audio: "pretense.mp3"},
+					{name: "Quickstep Crash", audio: "quickstepcrash.mp3"},
+					{name: "In the Middle of the Month of March", audio: "inthemiddleofthemonthofmarch.mp3"},
+					{name: "Tumbleweed Standoff", audio: "tumbleweedstandoff.mp3"},
+					{name: "Fanfare Variations", audio: "fanfarevariations.mp3"},
+					{name: "Darkness Dungeon", audio: "darknessdungeon.mp3"},
+					{name: "Seafarer's Ballad", audio: "seafarersballad.mp3"},
+					{name: "Island Jazz", audio: "islandjazz.mp3"},
+					{name: "Contemplation", audio: "contemplation.mp3"},
+					{name: "Meteor Wasteland", audio: "meteorwasteland.mp3"},
+					{name: "Keep Calm and Carry On", audio: "keepcalmandcarryon.mp3"},
+					{name: "Robot Waltz", audio: "robotwaltz.mp3"},
+					{name: "Clarinet Corral", audio: "clarinetcorral.mp3"}
+				]},
+				cascade: {id: "cascade", image: "cascade.png", name: "Cascade", year: 2011, tracks: [
+					{name: "Uplift", audio: "uplift.mp3"},
+					{name: "Freefall", audio: "freefall.mp3"},
+					{name: "Plummet", audio: "plummet.mp3"},
+					{name: "Marvel at the Sky", audio: "marvelatthesky.mp3"},
+					{name: "Yesteryear's July", audio: "yesteryearsjuly.mp3"},
+					{name: "I'll Be Fine", audio: "illbefine.mp3"},
+					{name: "Consort Concerto for Winds", audio: "consortconcertoforwinds.mp3"},
+					{name: "Gleam", audio: "gleam.mp3"},
+					{name: "Solstice Song", audio: "solsticesong.mp3"},
+					{name: "Mistaken Faces", audio: "mistakenfaces.mp3"},
+					{name: "Quest", audio: "quest.mp3"},
+					{name: "Brass Blaster", audio: "brassblaster.mp3"},
+					{name: "Modernity", audio: "modernity.mp3"},
+					{name: "Ice", audio: "ice.mp3"},
+					{name: "Chameleon", audio: "chameleon.mp3"},
+					{name: "Into the Void", audio: "intothevoid.mp3"}
+				]},
+				draftsadrift2: {id: "draftsadrift2", image: "draftsadrift2.png", name: "Drafts Adrift 2", year: 2011, tracks: [
+					{name: "Sounddrawn", audio: "sounddrawn.mp3"},
+					{name: "Abraham Lincoln", audio: "abrahamlincoln.mp3"},
+					{name: "Puzzlement", audio: "puzzlement.mp3"},
+					{name: "Snake-a-pede", audio: "snakeapede.mp3"},
+					{name: "Pizzicato Pulse", audio: "pizzicatopulse.mp3"},
+					{name: "SoW French Theme", audio: "sowfrenchtheme.mp3"},
+					{name: "SoW Transitions", audio: "sowtransitions.mp3"},
+					{name: "SoW German Theme", audio: "sowgermantheme.mp3"},
+					{name: "SoW American March", audio: "sowamericanmarch.mp3"},
+					{name: "Wavering Black", audio: "waveringblack.mp3"},
+					{name: "Rainscape", audio: "rainscape.mp3"},
+					{name: "Don't Touch Me; I Hate You", audio: "donttouchmeihateyou.mp3"},
+					{name: "Road Crosser", audio: "roadcrosser.mp3"},
+					{name: "Ski Slope Theme", audio: "skislopetheme.mp3"},
+					{name: "Chromatones", audio: "chromatones.mp3"},
+					{name: "Together Again", audio: "togetheragain.mp3"}
+				]},
+				captainchronosailsthroughtime: {id: "captainchronosailsthroughtime", image: "captainchronosailsthroughtime.png", name: "Captain Chrono Sails Through Time", year: 2012, tracks: [
+					{name: "Home", audio: "home.mp3"},
+					{name: "Apocalypse", audio: "apocalypse.mp3"},
+					{name: "Solemnes", audio: "solemnes.mp3"},
+					{name: "Mobster Maze", audio: "mobstermaze.mp3"},
+					{name: "Conquistadores", audio: "conquistadores.mp3"},
+					{name: "Ragtime Locomotive", audio: "ragtimelocomotive.mp3"},
+					{name: "Drums", audio: "drums.mp3"},
+					{name: "Gamelan Jazz", audio: "gamelanjazz.mp3"},
+					{name: "Celtic Castle", audio: "celticcastle.mp3"},
+					{name: "Old West in the Middle East", audio: "oldwestinthemiddleeast.mp3"},
+					{name: "Isla del Sol", audio: "isladelsol.mp3"},
+					{name: "Shamisen Shimmer", audio: "shamisenshimmer.mp3"},
+					{name: "Synthphony", audio: "synthphony.mp3"},
+					{name: "Life on Mars", audio: "lifeonmars.mp3"},
+					{name: "Frontlines", audio: "frontlines.mp3"},
+					{name: "Alexander", audio: "alexander.mp3"}
+				]},
+				penduluminous: {id: "penduluminous", image: "penduluminous.png", name: "Penduluminous", year: 2012, tracks: [
+					{name: "After All", audio: "afterall.mp3"},
+					{name: "Would You Be My Muse?", audio: "wouldyoubemymuse.mp3"},
+					{name: "Ghost in the Drum Machine", audio: "ghostinthedrummachine.mp3"},
+					{name: "Where We Left Off", audio: "whereweleftoff.mp3"},
+					{name: "Flash (Hurry Up and Wait)", audio: "flashhurryupandwait.mp3"},
+					{name: "You Told Me That You Loved Me Too Soon", audio: "youtoldmethatyoulovedmetoosoon.mp3"},
+					{name: "Treasure", audio: "treasure.mp3"},
+					{name: "Moonlight", audio: "moonlinght.mp3"},
+					{name: "Wheels Turning", audio: "wheelsturning.mp3"},
+					{name: "Sorry I'm So Late", audio: "sorryimsolate.mp3"},
+					{name: "Tell Me", audio: "tellme.mp3"},
+					{name: "Rise", audio: "rise.mp3"},
+					{name: "Swing, Pendulum, Swing", audio: "swingpendulumswing.mp3"},
+					{name: "One Day", audio: "oneday.mp3"},
+					{name: "Minus Money", audio: "minusmoney.mp3"},
+					{name: "365", audio: "365.mp3"}
+				]},
+				thedeathmakerssymphony: {id: "thedeathmakerssymphony", image: "thedeathmakerssymphony.png", name: "The Deathmakers' Symphony", year: 2013, tracks: [
+					{name: "Adaptation", audio: "adaptation.mp3"},
+					{name: "Shipwreck", audio: "shipwreck.mp3"},
+					{name: "A Most Peculiar Child", audio: "amostpeculiarchild.mp3"},
+					{name: "Becoming Friends", audio: "becomingfriends.mp3"},
+					{name: "Jailbreak!", audio: "jailbreak.mp3"},
+					{name: "The Dragon", audio: "thedragon.mp3"},
+					{name: "Never Been Home Before", audio: "neverbeenhomebefore.mp3"},
+					{name: "Maybe Something More", audio: "maybesomethingmore.mp3"},
+					{name: "Construction", audio: "construction.mp3"},
+					{name: "Bittersweet", audio: "bittersweet.mp3"},
+					{name: "Sails on the Horizon", audio: "sailsonthehorizon.mp3"},
+					{name: "Annihilation", audio: "annihilation.mp3"},
+					{name: "The Lightning Isle", audio: "thelightningisle.mp3"},
+					{name: "Lovelost", audio: "lovelost.mp3"},
+					{name: "The Cure", audio: "thecure.mp3"},
+					{name: "Forever", audio: "forever.mp3"}
+				]},
+				singles: {id: "singles", image: "singles.png", name: "Singles", year: 2016, tracks: [
+					{name: "Goodbye", audio: "goodbye.m4a"},
+					{name: "Motion", audio: "motion.m4a"},
+					{name: "Engine", audio: "engine.m4a"},
+					{name: "Concede", audio: "concede.m4a"},
+					{name: "Interconnected", audio: "interconnected.m4a"},
+					{name: "Sunshine", audio: "sunshine.m4a"},
+					{name: "Expedition", audio: "expedition.m4a"},
+					{name: "Window", audio: "window.m4a"},
+					{name: "Villain", audio: "villain.m4a"},
+					{name: "Ambition", audio: "ambition.m4a"},
+					{name: "Exhaustion", audio: "exhaustion.m4a"},
+					{name: "Facade", audio: "facade.m4a"},
+					{name: "Train", audio: "train.m4a"},
+					{name: "Weight", audio: "weight.m4a"},
+					{name: "Doubt", audio: "doubt.m4a"},
+					{name: "Hello", audio: "hello.m4a"}
+				]}
+			}
+
+	/*** menu ***/
+		/* buildMenu */
+			buildMenu()
+			function buildMenu() {
+				for (var a in music) {
+					// container
+						var album = document.createElement("details")
+							album.id = music[a].id
+						discography.appendChild(album)
+
+					// heading
+						var summary = document.createElement("summary")
+						album.appendChild(summary)
+
+						var cover = document.createElement("div")
+							cover.className = "cover"
+							cover.style["background-image"] = "url(artwork/" + music[a].image + ")"
+						summary.appendChild(cover)
+
+						var name = document.createElement("h2")
+							name.innerText = music[a].name
+						summary.appendChild(name)
+
+						var year = document.createElement("h3")
+							year.innerText = music[a].year
+						summary.appendChild(year)
+
+					// track listing
+						var list = document.createElement("ol")
+							list.setAttribute("start", 1)
+						album.appendChild(list)
+
+						for (var t in music[a].tracks) {
+							var item = document.createElement("li")
+								item.innerText = music[a].tracks[t].name
+								item.setAttribute("index", t)
+								item.addEventListener(on.click, selectTrack)
+							list.appendChild(item)
+						}
 				}
 			}
-		}
 
-	//---switchSongs---//
-		function switchSongs(music,clickedSong) {
-			console.log("playing " + clickedSong);
+		/* selectTrack */
+			function selectTrack(event) {
+				// set current
+					currentSong.album = event.target.parentNode.parentNode.id
+					currentSong.index = Number(event.target.getAttribute("index"))
 
-			for (var i = 0; i < music.length; i++) {
-				for (var j = 0; j < music[i][3].length; j++) {
-					if (music[i][3][j][1] === clickedSong) {
-						$("#nowPlayingSong").empty().append(music[i][3][j][0]);
-						$("#nowPlayingAlbum").empty().append(music[i][2]);
-						$("title").text("jamesmayr: " + music[i][3][j][0]);
-						$("#logo").attr("href","artwork/" + music[i][1]);
-
-						var player = $("#nowPlaying").attr("src","music/" + clickedSong);
-						$("audio").trigger("pause").load().trigger("play");
-					}
-				}
+				// updatePlayer
+					updatePlayer()
 			}
-		}
 
-	//---getNext---//
-		function getNext(music,currentSong) {
-			console.log("finished " + currentSong);
+	/*** player ***/
+		/* playNext */
+			player.addEventListener("ended", playNext)
+			function playNext() {
+				// set current
+					if (currentSong.index < music[currentSong.album].tracks.length - 1) {
+						currentSong.index++
+					}
+					else {
+						currentSong.index = 0
+						var keys = Object.keys(music)
+						var albumIndex = keys.indexOf(currentSong.album)
 
-			for (var i = 0; i < music.length; i++) {
-				for (var j = 0; j < music[i][3].length; j++) {
-					if (music[i][3][j][1] === currentSong) {
-						if (music[i][3].length > (j + 1)) {
-							console.log("next song");
-							var nextSong = music[i][3][j + 1][1];
+						if (albumIndex < keys.length) {
+							currentSong.album = keys[albumIndex + 1]
 						}
 						else {
-							console.log("restarting album");
-							var nextSong = music[i][3][0][1];
+							currentSong.album = keys[0]
 						}
 					}
-				}
+
+				// updatePlayer
+					updatePlayer()
 			}
 
-			return nextSong;
-		}
+		/* updatePlayer */
+			function updatePlayer() {
+				// reset music
+					player.pause()
+					player.currentTime = 0
+					source.setAttribute("src", "music/" + music[currentSong.album].tracks[currentSong.index].audio)
+					player.load()
+					player.play()
 
-	//---actions---//
-		showAlbums(music);
+				// update text & picture
+					artwork.style["background-image"] = "url(artwork/" + music[currentSong.album].image + ")"
+					nowPlayingAlbum.innerText = music[currentSong.album].name
+					nowPlayingTrack.innerText = music[currentSong.album].tracks[currentSong.index].name
 
-		$(document).on("click",".album",function() {
-			showTracks(music,this.id);
-		});
+				// update meta data
+					logo.href = "artwork/" + music[currentSong.album].image
+					title.innerText = "jamesmayr: " + music[currentSong.album].tracks[currentSong.index].name
 
-		$(document).on("click",".trackname",function() {
-			switchSongs(music,this.id);
-		});
+				// select track text
+					document.querySelectorAll("[selected]").forEach(function (element) {
+						element.removeAttribute("selected")
+					})
+					var tracks = document.getElementById(currentSong.album).firstChild.nextSibling.childNodes
+					tracks[currentSong.index].setAttribute("selected", true)
+			}
 
-		audio.addEventListener("ended", function() {
-			currentSong = String($("source").attr("src")).substring(6);
-			switchSongs(music,getNext(music,currentSong));
-		});
-
-});
+}
