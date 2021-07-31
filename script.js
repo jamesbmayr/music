@@ -182,7 +182,7 @@ window.onload = function() {
 					{name: "Flash (Hurry Up and Wait)", audio: "flashhurryupandwait.mp3"},
 					{name: "You Told Me That You Loved Me Too Soon", audio: "youtoldmethatyoulovedmetoosoon.mp3"},
 					{name: "Treasure", audio: "treasure.mp3"},
-					{name: "Moonlight", audio: "moonlinght.mp3"},
+					{name: "Moonlight", audio: "moonlight.mp3"},
 					{name: "Wheels Turning", audio: "wheelsturning.mp3"},
 					{name: "Sorry I'm So Late", audio: "sorryimsolate.mp3"},
 					{name: "Tell Me", audio: "tellme.mp3"},
@@ -234,10 +234,12 @@ window.onload = function() {
 		/* buildMenu */
 			buildMenu()
 			function buildMenu() {
-				for (var a in music) {
+				var keys = Object.keys(music)
+					keys = keys.reverse()
+				for (var k in keys) {
 					// container
 						var album = document.createElement("details")
-							album.id = music[a].id
+							album.id = music[keys[k]].id
 						discography.appendChild(album)
 
 					// heading
@@ -246,15 +248,15 @@ window.onload = function() {
 
 						var cover = document.createElement("div")
 							cover.className = "cover"
-							cover.style["background-image"] = "url(artwork/" + music[a].image + ")"
+							cover.style["background-image"] = "url(https://raw.githubusercontent.com/jamesbmayr/music/master/artwork/" + music[keys[k]].image + ")"
 						summary.appendChild(cover)
 
 						var name = document.createElement("h2")
-							name.innerText = music[a].name
+							name.innerText = music[keys[k]].name
 						summary.appendChild(name)
 
 						var year = document.createElement("h3")
-							year.innerText = music[a].year
+							year.innerText = music[keys[k]].year
 						summary.appendChild(year)
 
 					// track listing
@@ -262,21 +264,43 @@ window.onload = function() {
 							list.setAttribute("start", 1)
 						album.appendChild(list)
 
-						for (var t in music[a].tracks) {
+						for (var t in music[keys[k]].tracks) {
 							var item = document.createElement("li")
-								item.innerText = music[a].tracks[t].name
 								item.setAttribute("index", t)
-								item.addEventListener(on.click, selectTrack)
 							list.appendChild(item)
+
+							var button = document.createElement("button")
+								button.innerText = music[keys[k]].tracks[t].name
+								button.addEventListener(on.click, selectTrack)
+							item.appendChild(button)
 						}
 				}
 			}
 
 		/* selectTrack */
 			function selectTrack(event) {
+				// before
+					var beforeSong = {
+						album: currentSong.album,
+						index: currentSong.index
+					}
+
 				// set current
-					currentSong.album = event.target.parentNode.parentNode.id
-					currentSong.index = Number(event.target.getAttribute("index"))
+					currentSong.album = event.target.parentNode.parentNode.parentNode.id
+					currentSong.index = Number(event.target.parentNode.getAttribute("index"))
+
+				// same?
+					if (beforeSong.album == currentSong.album && beforeSong.index == currentSong.index) {
+						// playing?
+							if (player.paused) {
+								player.play()
+							}
+							else {
+								player.pause()
+							}
+
+						return
+					}
 
 				// updatePlayer
 					updatePlayer()
@@ -295,11 +319,11 @@ window.onload = function() {
 						var keys = Object.keys(music)
 						var albumIndex = keys.indexOf(currentSong.album)
 
-						if (albumIndex < keys.length) {
-							currentSong.album = keys[albumIndex + 1]
+						if (albumIndex > 0) {
+							currentSong.album = keys[albumIndex - 1]
 						}
 						else {
-							currentSong.album = keys[0]
+							currentSong.album = keys[keys.length - 1]
 						}
 					}
 
@@ -307,23 +331,91 @@ window.onload = function() {
 					updatePlayer()
 			}
 
+		/* loadPlayer */
+			loadPlayer()
+			function loadPlayer() {
+				// querystring
+					var get = {}
+					var querystring = location.search.substring(1)
+					if (querystring) {
+						querystring = querystring.split("&")
+						querystring.forEach(function(pair) {
+							pair = pair.split("=")
+							get[pair[0]] = pair[1]
+						})
+					}
+
+				// track?
+					if (get.track) {
+						var cleanTitle = get.track.toLowerCase().replace(/[^a-z0-9]/g, "").trim()
+						albumLoop: for (var i in music) {
+							trackLoop: for (var j = 0; j < music[i].tracks.length; j++) {
+								if (music[i].tracks[j].name.toLowerCase().replace(/[^a-z0-9]/g, "") == cleanTitle) {
+									currentSong.album = i
+									currentSong.index = j
+									break albumLoop
+									break trackLoop
+								}
+							}
+						}
+					}
+
+				// album?
+					if (!currentSong.album && get.album && music[get.album.toLowerCase()]) {
+						currentSong.album = get.album.toLowerCase()
+						currentSong.index = 0
+						
+						if (get.track) {
+							var cleanTitle = get.track.toLowerCase().replace(/[^a-z0-9]/g, "").trim()
+							trackLoop: for (var j = 0; j < music[currentSong.album].tracks.length; j++) {
+								if (music[currentSong.album].tracks[j].name.toLowerCase().replace(/[^a-z0-9]/g, "") == cleanTitle) {
+									currentSong.index = j
+									break trackLoop
+								}
+							}
+						}
+					}
+				
+				// neither
+					if (!currentSong.album) {
+						var albums = Object.keys(music)
+						currentSong.album = albums[Math.floor(Math.random() * albums.length)]
+						currentSong.index = Math.floor(Math.random() * music[currentSong.album].tracks.length)
+					}
+					
+					document.getElementById(currentSong.album).setAttribute("open", true)
+					discography.scrollTop = 105 * Object.keys(music).reverse().indexOf(currentSong.album)
+
+				// update player
+					updatePlayer(true)
+			}
+
 		/* updatePlayer */
-			function updatePlayer() {
+			function updatePlayer(firstLoad) {
 				// reset music
 					player.pause()
 					player.currentTime = 0
-					source.setAttribute("src", "music/" + music[currentSong.album].tracks[currentSong.index].audio)
+					source.setAttribute("src", "https://raw.githubusercontent.com/jamesbmayr/music/master/music/" + music[currentSong.album].tracks[currentSong.index].audio)
 					player.load()
-					player.play()
+
+					if (!firstLoad) {
+						player.play()
+					}
 
 				// update text & picture
-					artwork.style["background-image"] = "url(artwork/" + music[currentSong.album].image + ")"
+					artwork.style["background-image"] = "url(https://raw.githubusercontent.com/jamesbmayr/music/master/artwork/" + music[currentSong.album].image + ")"
 					nowPlayingAlbum.innerText = music[currentSong.album].name
 					nowPlayingTrack.innerText = music[currentSong.album].tracks[currentSong.index].name
 
 				// update meta data
-					logo.href = "artwork/" + music[currentSong.album].image
+					logo.href = "https://raw.githubusercontent.com/jamesbmayr/music/master/artwork/" + music[currentSong.album].image
 					title.innerText = "jamesmayr: " + music[currentSong.album].tracks[currentSong.index].name
+
+				// update URL
+					var currentURL = new URL(window.location.href)
+						currentURL.search = "?album=" + music[currentSong.album].name.toLowerCase().replace(/[^a-z0-9]/g, "").trim() +
+											"&track=" + music[currentSong.album].tracks[currentSong.index].name.toLowerCase().replace(/[^a-z0-9]/g, "").trim()
+					window.history.pushState({}, "", currentURL)
 
 				// select track text
 					document.querySelectorAll("[selected]").forEach(function (element) {

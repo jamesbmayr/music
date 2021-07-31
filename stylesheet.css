@@ -76,7 +76,7 @@
 			outline: none;
 		}
 
-		#player:hover {
+		#player:hover, #player:focus {
 			filter: drop-shadow(0px 0px 5px #111111);
 		}
 
@@ -108,6 +108,13 @@
 			font-family: monospace;
 			color: #333333;
 			user-select: none;
+		}
+
+		@media screen and (max-width: 799px) {
+			#now-playing {
+				font-size: 15px;
+				line-height: 1;
+			}
 		}
 
 		#now-playing-track {
@@ -148,8 +155,8 @@
 			background-color: transparent;
 			background-repeat: no-repeat;
 			background-position: center center;
-			background-size: cover;
-			background-image: url(artwork/sounddrawn.png);
+			background-size: contain;
+			background-image: url(https://raw.githubusercontent.com/jamesbmayr/music/master/artwork/sounddrawn.png);
 			box-shadow: 0px 0px 20px #111111 inset;
 		}
 
@@ -178,7 +185,7 @@
 			height: 90px;
 		}
 
-		#discography details:hover {
+		#discography details:hover, #discography details:focus-within {
 			box-shadow: 0px 0px 10px #dddddd;
 		}
 
@@ -225,17 +232,31 @@
 
 		#discography ol li {
 			user-select: none;
+			font-family: monospace;
+			font-size: 15px;
+			color: #dddddd;
+		}
+
+		#discography ol li button {
+			background: transparent;
+			border: none;
+			padding: 0;
+			margin: 0;
+			width: 100%;
+			height: auto;
+			text-align: left;
+			user-select: none;
 			cursor: pointer;
 			font-family: monospace;
 			font-size: 15px;
 			color: #dddddd;
 		}
 
-		#discography ol li:hover {
+		#discography ol li button:hover, #discography ol li button:focus {
 			text-shadow: 0px 0px 10px #dddddd;
 		}
 
-		#discography ol li[selected] {
+		#discography ol li[selected] button {
 			font-weight: bold;
 			text-shadow: 0px 0px 10px #dddddd;
 		}
