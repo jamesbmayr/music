@@ -1,11 +1,7 @@
-[intro]
-
 This can't last forever,
 whether you know it now or not,
 and whatever you forgot
 will find its way to you
-
-[bridge]
 
 The truth will cast a shadow,
 but you had no hope escaping
@@ -17,11 +13,7 @@ And one by one, they'll notice what you're up to.
 Every string is tearing at the seam,
 but in between, it seems to be enough for you
 
-[bridge]
-
 None of this is real, you're in a dream
 And one by one, they'll notice what you're up to.
 Every string is tearing at the seam,
 but in between, it seems to be enough for you
-
-[outro]

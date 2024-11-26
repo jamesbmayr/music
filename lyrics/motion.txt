@@ -1,5 +1,3 @@
-[intro]
-
 Way back when,
 they'd spend their seconds
 guessing what
@@ -26,8 +24,6 @@ Everything's in motion
 and you know
 it's gonna get
 away from you
-
-[bridge]
 
 Years go by,
 they try to find
@@ -56,8 +52,6 @@ and you know
 it's gonna get
 away from you
 
-[bridge]
-
 Swallow your emotions
 settle for the better
 of whatever
@@ -66,5 +60,3 @@ Everything's in motion
 and you know
 it's gonna get
 away from you
-
-[outro]

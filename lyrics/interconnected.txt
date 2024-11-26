@@ -1,5 +1,3 @@
-[intro]
-
 interconnected
 they bind your mind to mine
 and everything is fine
@@ -19,8 +17,6 @@ you can keep your secrets sleeping
 you can take them to your grave
 don't misbehave, they keep the sheep
 secure but you're a data slave
-
-[bridge]
 
 superselected
 today you have a say
@@ -42,8 +38,6 @@ you can take them to your grave
 don't misbehave, they keep the sheep
 secure but you're a data slave
 
-[bridge]
-
 you can have your favorite color
 you can choose from black and blue
 the day's a little duller
@@ -53,5 +47,3 @@ you can keep your secrets sleeping
 you can take them to your grave
 don't misbehave, they keep the sheep
 secure but you're a data slave
-
-[outro]

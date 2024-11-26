@@ -1,5 +1,3 @@
-[intro]
-
 Summertime
 sixteen
 been on my mind
@@ -8,8 +6,6 @@ break a bond
 break a heart
 then move on
 and restart
-
-[piano solo]
 
 Share a year
 with someone new
@@ -20,8 +16,6 @@ where's it from
 so drag it out
 the time has come
 
-[voice solo]
-
 Simply friends
 then something more
 we pretend
@@ -31,8 +25,6 @@ this isn't right
 we don't belong
 one winter night
 
-[flute solo]
-
 So long ago
 there was only you
 until my soul
@@ -41,6 +33,3 @@ no malintent
 this isn't blame
 but now I'm bent
 to do the same
-
-[outro]
-[outro]

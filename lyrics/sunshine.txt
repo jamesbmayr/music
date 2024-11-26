@@ -1,5 +1,3 @@
-[intro]
-
 I feel the sunlight
 as it seeps into my skin
 the city garden
@@ -8,8 +6,6 @@ the dogwood branches
 are swaying in the wind
 I'll wait away
 the afternoon
-
-[solo]
 
 A perfect scene, here
 the colors never fade
@@ -29,8 +25,6 @@ but the momentary bliss, you
 can bet I'll reminisce
 some more
 
-[bridge]
-
 The park is closing
 and I know I have to go
 but when I leave,
@@ -49,8 +43,6 @@ but the momentary bliss, you
 can bet I'll reminisce
 some more
 
-[bridge]
-
 Sunshine, melt away
 the madness
 I could swear I
@@ -59,5 +51,3 @@ It's bad enough to miss you
 but the momentary bliss, you
 can bet I'll reminisce
 some more
-
-[outro]

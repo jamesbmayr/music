@@ -1,5 +1,3 @@
-[intro]
-
 I might try
 I could just give in,
 forgive him
@@ -9,8 +7,6 @@ I'll find time,
 hiding from spies
 inside of my
 mind
-
-[solos]
 
 We can't see,
 frequently keeping
@@ -22,8 +18,6 @@ seeing it creep
 while I'm sleeping
 it by
 
-[bridge]
-
 Through that door,
 I'm on the floor and
 I'm poring through
@@ -34,7 +28,6 @@ ignoring the core
 we're enduring
 it for
 
-(outro)
 I keep checking
 the feed
 and I can't
